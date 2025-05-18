@@ -1,0 +1,94 @@
+{
+  "uuid": "2397c11a-52ec-42eb-ae8c-44e138e566af",
+  "lastMigration": 33,
+  "name": "todo service",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3003,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "59f3abe3-273e-4605-9e59-fa144fc70486",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "a124a4b9-23b0-42d2-aced-42001b1cb9ef",
+          "body": "{\n    \"todos\": [\n        {\n            \"id\": 1,\n            \"todo\": \"Learn Quarkus\",\n            \"completed\": false,\n            \"userId\": 3\n        },\n        {\n            \"id\": 2,\n            \"todo\": \"Buy milk\",\n            \"completed\": true,\n            \"userId\": 12\n        },\n        {\n            \"id\": 3,\n            \"todo\": \"Watch a classic movie\",\n            \"completed\": true,\n            \"userId\": 1\n        },\n        {\n            \"id\": 4,\n            \"todo\": \"Watch a documentary\",\n            \"completed\": false,\n            \"userId\": 3\n        },\n        {\n            \"id\": 5,\n            \"todo\": \"Invest in cryptocurrency\",\n            \"completed\": false,\n            \"userId\": 3\n        },\n        {\n            \"id\": 6,\n            \"todo\": \"Organize pantry\",\n            \"completed\": false,\n            \"userId\": 4\n        },\n        {\n            \"id\": 7,\n            \"todo\": \"Buy a new house decoration\",\n            \"completed\": true,\n            \"userId\": 15\n        },\n        {\n            \"id\": 8,\n            \"todo\": \"Plan a vacation you've always wanted to take\",\n            \"completed\": true,\n            \"userId\": 7\n        },\n        {\n            \"id\": 9,\n            \"todo\": \"Clean out car\",\n            \"completed\": false,\n            \"userId\": 3\n        },\n        {\n            \"id\": 10,\n            \"todo\": \"Draw and color a Mandala\",\n            \"completed\": true,\n            \"userId\": 6\n        },\n        {\n            \"id\": 11,\n            \"todo\": \"Create a cookbook with favorite recipes\",\n            \"completed\": true,\n            \"userId\": 2\n        },\n        {\n            \"id\": 12,\n            \"todo\": \"Bake a pie with some friends\",\n            \"completed\": false,\n            \"userId\": 1\n        }\n    ],\n    \"total\": 12,\n    \"skip\": 0,\n    \"limit\": 30\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "59f3abe3-273e-4605-9e59-fa144fc70486"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
