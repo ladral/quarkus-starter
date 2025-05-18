@@ -2,14 +2,12 @@ package ch.ix.models;
 
 public class TodoItem {
     private long id;
-    private String todo;
+    private String description;
     private boolean completed;
-    private long userId;
 
-    public TodoItem(long id, String todo, long userId) {
+    public TodoItem(long id, String todo) {
         this.id = id;
-        this.todo = todo;
-        this.userId = userId;
+        this.description = todo;
         this.completed = false;
     }
 
@@ -21,12 +19,12 @@ public class TodoItem {
         this.id = id;
     }
 
-    public String getTodo() {
-        return todo;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTodo(String todo) {
-        this.todo = todo;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public boolean isCompleted() {
@@ -35,13 +33,5 @@ public class TodoItem {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
     }
 }

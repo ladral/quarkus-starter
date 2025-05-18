@@ -2,6 +2,7 @@ package ch.ix.api;
 
 import ch.ix.models.TodoItem;
 import ch.ix.services.TodoRestClient;
+import ch.ix.services.model.GetTodosResponse;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -22,7 +23,9 @@ public class TodoResource {
     @Produces(MediaType.APPLICATION_JSON)
     public List<TodoItem> getTodos() {
         try {
-            return todoRestClient.getTodos().todos();
+            GetTodosResponse response = todoRestClient.getTodos();
+
+            return response.todos().stream().map(todo -> new TodoItem(todo.id(), todo.todo())).toList();
 
         } catch (Exception e) {
             throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);

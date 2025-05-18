@@ -1,13 +1,17 @@
 package ch.ix.services.model;
-
-import ch.ix.models.TodoItem;
-
 import java.util.List;
 
 public record GetTodosResponse(
-        List<TodoItem> todos,
+        List<Todo> todos,
         int total,
         int skip,
         int limit
 ) {
+    public record Todo(
+            long id,
+            String todo,
+            boolean completed,
+            long userId
+    ) {
+    }
 }
