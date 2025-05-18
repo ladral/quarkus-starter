@@ -13,7 +13,7 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "",
+      "endpoint": "api/todos",
       "responses": [
         {
           "uuid": "a124a4b9-23b0-42d2-aced-42001b1cb9ef",
