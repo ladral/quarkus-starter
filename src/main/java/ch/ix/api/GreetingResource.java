@@ -1,5 +1,6 @@
 package ch.ix.api;
 
+import ch.ix.models.Greeting;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -9,8 +10,8 @@ import jakarta.ws.rs.core.MediaType;
 public class GreetingResource {
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Hello from Quarkus REST";
+    @Produces(MediaType.APPLICATION_JSON)
+    public Greeting hello() {
+        return new Greeting("Hello", "Quarkus REST");
     }
 }
