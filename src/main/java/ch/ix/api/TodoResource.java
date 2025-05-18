@@ -3,6 +3,8 @@ package ch.ix.api;
 import ch.ix.models.TodoItem;
 import ch.ix.services.TodoRestClient;
 import ch.ix.services.model.GetTodosResponse;
+import ch.ix.services.model.TodoMapper;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -19,13 +21,16 @@ public class TodoResource {
     @RestClient
     TodoRestClient todoRestClient;
 
+    @Inject
+    TodoMapper mapper;
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<TodoItem> getTodos() {
         try {
             GetTodosResponse response = todoRestClient.getTodos();
 
-            return response.todos().stream().map(todo -> new TodoItem(todo.id(), todo.todo())).toList();
+            return response.todos().stream().map(mapper::map).toList();
 
         } catch (Exception e) {
             throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
